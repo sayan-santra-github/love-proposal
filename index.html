@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern?family=Playwrite+IT+Moderna&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <div class="mainDiv">
+    <form action="#">
+      <div>
+        I Love You &#10084;
+      </div>
+      <div>
+        <div>
+          <img src="IMG_20240623_075050.jpg" alt="">
+        </div>
+      </div>
+      <div>
+        Do You Love Me ?
+      </div>
+      <div class="buttons">
+        <button id="no" value="No">&#x1F614; No</button>
+        <button id="yes" value="Yes">&#128149; Yes</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="congraduateDiv">
+    <div class="glow">Congratulations</div>
+    <div>
+        <div>
+            <img src="-ny3xbr.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.pixabay.com/photo/2022/08/21/04/07/love-7400391_1280.png" alt="">
+        </div>
+        <div>
+            <img src="IMG_20240623_075050.jpg" alt="">
+        </div>
+    </div>
+    <div>
+        Arnab is now your Boyfriend, Zuliate
+    </div>
+  </div>
+
+  <script>
+    const btn = document.querySelector(".buttons");
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const mainDiv = document.querySelector('.mainDiv')
+    const congraduateDiv = document.querySelector('.congraduateDiv');
+
+    noBtn.addEventListener("click", () => {
+      const yesIndex = Array.from(btn.children).indexOf(yesBtn);
+      const noIndex = Array.from(btn.children).indexOf(noBtn);
+
+      if (noIndex < yesIndex) {
+        btn.insertBefore(yesBtn, noBtn);
+      } else {
+        btn.insertBefore(noBtn, yesBtn);
+      }
+    });
+
+    yesBtn.addEventListener("click", () => {
+        mainDiv.style.display = "none"
+        congraduateDiv.style.display = "flex"
+    })
+  </script>
+
+</body>
+
+</html>
